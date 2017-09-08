@@ -19,6 +19,8 @@ if (window.location.host == "netcine.us") {
 
   fetch(document.URL).then(function (res) {
     res.text().then(function (data) {
+      document.querySelector("#demo").style.display = "none";
+
       var re = /file: "(.*)"/g;
       var result = re[Symbol.match](data);
       var high = void 0;
@@ -50,6 +52,7 @@ var form = function form(high, low) {
   cbtn.textContent = "x";
   cbtn.addEventListener('click', function () {
     box.remove();
+    document.querySelector("#demo").style.display = "block";
   });
 
   var boxcontent = document.createElement("div");

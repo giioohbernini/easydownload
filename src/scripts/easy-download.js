@@ -7,10 +7,12 @@ if (window.location.host == "netcine.us") {
   pnetcine()
 } else if (window.location.host == "www.micetop.us" || window.location.host == "micetop.us"){
 
-  console.log( "Don't inspect any more! - p.netcine" );
+  console.log("Don't inspect any more! - p.netcine");
 
   fetch(document.URL).then((res) => {
     res.text().then((data) => {
+      document.querySelector("#demo").style.display = "none"
+
       const re = /file: "(.*)"/g
       const result = re[Symbol.match](data)
       let high

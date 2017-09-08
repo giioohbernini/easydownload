@@ -9,6 +9,7 @@ const form = (high, low) => {
   cbtn.textContent = "x"
   cbtn.addEventListener('click', () => {
     box.remove()
+    document.querySelector("#demo").style.display = "block"
   })
 
   let boxcontent = document.createElement("div")
