@@ -43,10 +43,10 @@ Object.defineProperty(exports, "__esModule", {
 });
 var form = function form(high, low) {
   var box = document.createElement("div");
-  box.classList = "box";
+  box.classList = "easydownload-box";
 
   var closebtn = document.createElement("div");
-  closebtn.classList = "closebtn";
+  closebtn.classList = "easydownload-closebtn";
 
   var cbtn = document.createElement("button");
   cbtn.textContent = "x";
@@ -56,14 +56,14 @@ var form = function form(high, low) {
   });
 
   var boxcontent = document.createElement("div");
-  boxcontent.classList = "boxcontent";
+  boxcontent.classList = "easydownload-boxcontent";
 
   var img = document.createElement("img");
   img.width = "250";
   img.src = "https://i.imgur.com/Jl9XAFI.png";
 
   var buttons = document.createElement("div");
-  buttons.classList = "buttons";
+  buttons.classList = "easydownload-buttons";
 
   var highbtn = document.createElement("a");
   highbtn.textContent = "Alta qualidade";

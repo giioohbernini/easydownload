@@ -1,9 +1,9 @@
 const form = (high, low) => {
   let box = document.createElement("div")
-  box.classList = "box"
+  box.classList = "easydownload-box"
 
   let closebtn = document.createElement("div")
-  closebtn.classList = "closebtn"
+  closebtn.classList = "easydownload-closebtn"
 
   let cbtn = document.createElement("button")
   cbtn.textContent = "x"
@@ -13,14 +13,14 @@ const form = (high, low) => {
   })
 
   let boxcontent = document.createElement("div")
-  boxcontent.classList = "boxcontent"
+  boxcontent.classList = "easydownload-boxcontent"
 
   let img = document.createElement("img")
   img.width = "250"
   img.src = "https://i.imgur.com/Jl9XAFI.png"
 
   let buttons = document.createElement("div")
-  buttons.classList = "buttons"
+  buttons.classList = "easydownload-buttons"
 
   let highbtn = document.createElement("a")
   highbtn.textContent = "Alta qualidade"
