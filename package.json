@@ -11,7 +11,7 @@
     "browserify": "13.0.1",
     "node-sass": "3.7.0",
     "onchange": "2.4.0",
-    "parallelshell": "2.0.0",
+    "parallelshell": "3.0.2",
     "watchify": "3.7.0"
   },
   "scripts": {

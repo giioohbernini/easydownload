@@ -9,6 +9,8 @@ var _form2 = _interopRequireDefault(_form);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
 if (window.location.host == "netcine.us") {
   (0, _netcine.netcine)();
 } else if (window.location.host == "p.netcine.us") {
@@ -18,20 +20,18 @@ if (window.location.host == "netcine.us") {
   console.log("Don't inspect any more! - p.netcine");
 
   fetch(document.URL).then(function (res) {
-    res.text().then(function (data) {
-      document.querySelector("#demo").style.display = "none";
+    return res.text();
+  }).then(function (data) {
+    document.querySelector("#demo").style.display = "none";
 
-      var re = /file: "(.*)"/g;
-      var result = re[Symbol.match](data);
-      var high = void 0;
-      var low = void 0;
+    var regex = /file: "(.*)"/g;
+    var result = regex[Symbol.match](data);
 
-      result.forEach(function (item, index) {
-        index == 0 ? low = item.slice(7, -1) : high = item.slice(7, -1);
-      });
-
-      (0, _form2.default)(high, low);
+    var links = result.map(function (item, index) {
+      return item.slice(7, -1);
     });
+
+    _form2.default.apply(undefined, _toConsumableArray(links));
   });
 }
 
@@ -41,7 +41,7 @@ if (window.location.host == "netcine.us") {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var form = function form(high, low) {
+var form = function form(low, high) {
   var box = document.createElement("div");
   box.classList = "easydownload-box";
 
@@ -106,7 +106,6 @@ var netcine = exports.netcine = function netcine() {
 
   playercontent.forEach(function (item, index) {
     var uri = item.querySelector('iframe').src;
-
     var download = document.createElement("li");
     var downloadLink = document.createElement("a");
 
@@ -118,9 +117,7 @@ var netcine = exports.netcine = function netcine() {
 };
 
 var pnetcine = exports.pnetcine = function pnetcine() {
-
-  var iframe = document.querySelector("iframe");
-  window.location = iframe.src;
+  window.location = document.querySelector("iframe").src;
 };
 
 },{}]},{},[1]);

@@ -7,7 +7,6 @@ export const netcine = () => {
 
   playercontent.forEach((item, index) => {
     const uri = item.querySelector('iframe').src
-
     let download = document.createElement("li")
     let downloadLink = document.createElement("a")
 
@@ -20,7 +19,5 @@ export const netcine = () => {
 }
 
 export const pnetcine = () => {
-
-  const iframe = document.querySelector("iframe")
-  window.location = iframe.src
+  window.location = document.querySelector("iframe").src
 }

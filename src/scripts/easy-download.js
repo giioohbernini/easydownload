@@ -1,4 +1,4 @@
-import {netcine, pnetcine } from './netcine'
+import { netcine, pnetcine } from './netcine'
 import form from './form'
 
 if (window.location.host == "netcine.us") {
@@ -9,24 +9,20 @@ if (window.location.host == "netcine.us") {
 
   console.log("Don't inspect any more! - p.netcine");
 
-  fetch(document.URL).then((res) => {
-    res.text().then((data) => {
+  fetch(document.URL)
+    .then(res => res.text())
+    .then(data => {
       document.querySelector("#demo").style.display = "none"
 
-      const re = /file: "(.*)"/g
-      const result = re[Symbol.match](data)
-      let high
-      let low
+      const regex = /file: "(.*)"/g
+      const result = regex[Symbol.match](data)
 
-      result.forEach((item, index) => {
-        (index == 0)
-          ? low = item.slice(7,-1)
-          : high = item.slice(7,-1)
-      })
+      const links = result.map((item, index) =>
+        item.slice(7,-1)
+      )
 
-      form(high, low)
+      form(...links)
 
     })
-  });
 }
 

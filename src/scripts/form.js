@@ -1,4 +1,4 @@
-const form = (high, low) => {
+const form = (low, high) => {
   let box = document.createElement("div")
   box.classList = "easydownload-box"
 
