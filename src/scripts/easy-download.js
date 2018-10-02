@@ -1,7 +1,7 @@
 import { netcine, pnetcine } from './netcine'
 import form from './form'
 
-var host = window.location.host;
+const host = window.location.host;
 
 if (host == "netcine.us") {
   netcine()
