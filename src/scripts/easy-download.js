@@ -1,11 +1,13 @@
 import { netcine, pnetcine } from './netcine'
 import form from './form'
 
-if (window.location.host == "netcine.us") {
+var host = window.location.host;
+
+if (host == "netcine.us") {
   netcine()
-} else if(window.location.host == "p.netcine.us"){
+} else if(host == "p.netcine.us"){
   pnetcine()
-} else if (window.location.host == "www.micetop.us" || window.location.host == "micetop.us"){
+} else if (host == "www.micetop.us" || host == "micetop.us"){
 
   console.log("Don't inspect any more! - p.netcine");
 
