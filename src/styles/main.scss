@@ -1,15 +1,15 @@
 .easydownload-box {
-  background: #4c4c4c;
-  height: 400px;
-  left: calc(50% - 200px);
+  background-color: #4c4c4c;
   position: absolute;
+  left: calc(50% - 200px);
   top: calc(50% - 200px);
   width: 400px;
+  height: 400px;
   z-index: 999;
 }
 
 .easydownload-closebtn {
-  margin: 0.5em;
+  margin: .5em;
   position: absolute;
   right: 0;
 
